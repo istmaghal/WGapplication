@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/ic_konto"
+            android:icon="@drawable/ic_konto"
+            android:title="Konto" />
+        <item
+            android:id="@+id/ic_kontake"
+            android:icon="@drawable/ic_kontake"
+            android:title="Kontakte" />
+        <item
+            android:id="@+id/ic_einstellungen"
+            android:icon="@drawable/ic_einstellungen"
+            android:title="Einstellungen" />
+        <item
+            android:id="@+id/ic_abmeldung"
+            android:icon="@drawable/ic_abmeldung"
+            android:title="Abmelden" />
+    </group>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Freigeben" />
+            <item
+                android:id="@+id/ic_infos"
+                android:icon="@drawable/ic_infos"
+                android:title="Entwickler info" />
+        </menu>
+    </item>
+
+</menu>
