@@ -1,11 +1,10 @@
 package com.example.wgapplication;
 
-import android.app.Dialog;
-import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,12 +16,30 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
-
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+private CardView besucheCard,beschwerdeCard,einkaufswagenCard,profileCard,putzplanCard,eventsCard;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // hier werden die verschieden cards definiert
+        besucheCard=(CardView) findViewById( R.id.besuche_card);
+        beschwerdeCard=(CardView) findViewById( R.id.beschwerde_card);
+        einkaufswagenCard=(CardView) findViewById( R.id.einkaufswagen_card);
+        profileCard=(CardView) findViewById( R.id.profile_card);
+        putzplanCard=(CardView) findViewById( R.id.putzplan_card);
+        eventsCard=(CardView) findViewById( R.id.events_card);
+
+        //click listner an cards hinfügen damit sie als button funktionieren
+        besucheCard.setOnClickListener( this );
+        beschwerdeCard.setOnClickListener( this );
+        einkaufswagenCard.setOnClickListener( this );
+        profileCard.setOnClickListener( this );
+        putzplanCard.setOnClickListener( this );
+        eventsCard.setOnClickListener( this );
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -36,8 +53,6 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-
-
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -47,7 +62,6 @@ public class MainActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -74,9 +88,8 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here
+        // Handle navigation view item clicks here.
         int id = item.getItemId();
-
 
         if (id == R.id.ic_konto) {
             // Handle the konto action
@@ -97,52 +110,20 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    public boolean onMainMenuItemSelected(MenuItem item) {
-        // Handle navigation view from MainMenu items
-        int id = item.getItemId();
+    // methode ONclick für die aktivation der Buttons
+    @Override
+    public void onClick(View v) {
 
-        if (id == R.id.b_beschwerde) {
-            //funktion
-            openDialog();
-        }
-        if (id == R.id.b_besuche) {
-            //funktion
-            openDialog();
-        }
-        if (id == R.id.b_einkaufsliste) {
-            //funktion
-            openDialog();
-        }
-        if (id == R.id.b_events) {
-            //funktion
-            openDialog();
-        }
-        if (id == R.id.b_profile) {
-            //funktion
-            openDialog();
-        }
-        if (id == R.id.b_putzplan) {
-            //funktion
-            openDialog();
-        }
+        Intent i;
+        switch (v.getId()){
+            case R.id.besuche_card: break;
+            case R.id.beschwerde_card: break;
+            case R.id.events_card: break;
+            case R.id.einkaufswagen_card:i= new Intent( this,Einkaufswagen.class);startActivity(i);break;
+            case R.id.putzplan_card: break;
+            case R.id.profile_card: break;
+            default: break;
 
-        return true;
-    }
-
-    public void openDialog(){
-        //initialize the dialog
-        android.support.v7.app.AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle("Information !")
-                .setMessage("Funktion noch nicht Definiert")
-                .setPositiveButton("Abbrechen", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int which) {
-
-                    }
-                });
-        builder.create();
+        }
     }
 }
-
-
-
