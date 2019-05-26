@@ -1,8 +1,11 @@
 package com.example.wgapplication;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -33,6 +36,8 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -42,6 +47,7 @@ public class MainActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -68,8 +74,9 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+        // Handle navigation view item clicks here
         int id = item.getItemId();
+
 
         if (id == R.id.ic_konto) {
             // Handle the konto action
@@ -89,4 +96,53 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    public boolean onMainMenuItemSelected(MenuItem item) {
+        // Handle navigation view from MainMenu items
+        int id = item.getItemId();
+
+        if (id == R.id.b_beschwerde) {
+            //funktion
+            openDialog();
+        }
+        if (id == R.id.b_besuche) {
+            //funktion
+            openDialog();
+        }
+        if (id == R.id.b_einkaufsliste) {
+            //funktion
+            openDialog();
+        }
+        if (id == R.id.b_events) {
+            //funktion
+            openDialog();
+        }
+        if (id == R.id.b_profile) {
+            //funktion
+            openDialog();
+        }
+        if (id == R.id.b_putzplan) {
+            //funktion
+            openDialog();
+        }
+
+        return true;
+    }
+
+    public void openDialog(){
+        //initialize the dialog
+        android.support.v7.app.AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Information !")
+                .setMessage("Funktion noch nicht Definiert")
+                .setPositiveButton("Abbrechen", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+
+                    }
+                });
+        builder.create();
+    }
 }
+
+
+
