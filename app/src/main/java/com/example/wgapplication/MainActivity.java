@@ -119,7 +119,7 @@ private CardView besucheCard,beschwerdeCard,einkaufswagenCard,profileCard,putzpl
             case R.id.besuche_card: break;
             case R.id.beschwerde_card: break;
             case R.id.events_card: break;
-            case R.id.einkaufswagen_card:i= new Intent( this,Einkaufswagen.class);startActivity(i);break;
+            case R.id.einkaufswagen_card:i= new Intent( this,Einkaufswagen.class);startActivity(i  );break;
             case R.id.putzplan_card: break;
             case R.id.profile_card: break;
             default: break;
