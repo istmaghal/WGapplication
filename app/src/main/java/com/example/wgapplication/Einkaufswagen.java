@@ -49,7 +49,7 @@ alleWare.add( seif );
             @Override
             public void onClick(View v) {
                 openEinkaufsDialog();
-                onSaveInstanceState( savedInstanceState );
+              //  onSaveInstanceState( savedInstanceState );
 
             }
         } );
