@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,27 +18,29 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
-private CardView besucheCard,beschwerdeCard,einkaufswagenCard,profileCard,putzplanCard,eventsCard;
+
+    private CardView besucheCard, beschwerdeCard, einkaufswagenCard, profileCard, putzplanCard, eventsCard;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         // hier werden die verschieden cards definiert
-        besucheCard=(CardView) findViewById( R.id.besuche_card);
-        beschwerdeCard=(CardView) findViewById( R.id.beschwerde_card);
-        einkaufswagenCard=(CardView) findViewById( R.id.einkaufswagen_card);
-        profileCard=(CardView) findViewById( R.id.profile_card);
-        putzplanCard=(CardView) findViewById( R.id.putzplan_card);
-        eventsCard=(CardView) findViewById( R.id.events_card);
+        besucheCard = (CardView) findViewById(R.id.besuche_card);
+        beschwerdeCard = (CardView) findViewById(R.id.beschwerde_card);
+        einkaufswagenCard = (CardView) findViewById(R.id.einkaufswagen_card);
+        profileCard = (CardView) findViewById(R.id.profile_card);
+        putzplanCard = (CardView) findViewById(R.id.putzplan_card);
+        eventsCard = (CardView) findViewById(R.id.events_card);
 
         //click listner an cards hinfügen damit sie als button funktionieren
-        besucheCard.setOnClickListener( this );
-        beschwerdeCard.setOnClickListener( this );
-        einkaufswagenCard.setOnClickListener( this );
-        profileCard.setOnClickListener( this );
-        putzplanCard.setOnClickListener( this );
-        eventsCard.setOnClickListener( this );
+        besucheCard.setOnClickListener(this);
+        beschwerdeCard.setOnClickListener(this);
+        einkaufswagenCard.setOnClickListener(this);
+        profileCard.setOnClickListener(this);
+        putzplanCard.setOnClickListener(this);
+        eventsCard.setOnClickListener(this);
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -115,14 +118,26 @@ private CardView besucheCard,beschwerdeCard,einkaufswagenCard,profileCard,putzpl
     public void onClick(View v) {
 
         Intent i;
-        switch (v.getId()){
-            case R.id.besuche_card: break;
-            case R.id.beschwerde_card: break;
-            case R.id.events_card: break;
-            case R.id.einkaufswagen_card:i= new Intent( this,Einkaufswagen.class);startActivity(i  );break;
-            case R.id.putzplan_card: break;
-            case R.id.profile_card: break;
-            default: break;
+        switch (v.getId()) {
+            case R.id.besuche_card:
+                break;
+            case R.id.beschwerde_card:
+                break;
+            case R.id.events_card:
+                break;
+            case R.id.einkaufswagen_card:
+                i = new Intent(this, Einkaufswagen.class);
+                startActivity(i);
+                break;
+            case R.id.putzplan_card:
+                break;
+            case R.id.profile_card:
+                Log.d("mainActivity", "Profile");
+                i = new Intent(this, Profile.class);
+                startActivity(i);
+                break;
+            default:
+                break;
 
         }
     }
