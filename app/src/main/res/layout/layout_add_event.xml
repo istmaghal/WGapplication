@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/eventOrtTxt"
+        android:layout_width="230dp"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="108dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Ort" />
+
+    <Button
+        android:id="@+id/pick_date_button"
+        android:layout_width="136dp"
+        android:layout_height="38dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="9dp"
+        android:layout_toEndOf="@+id/eventOrtTxt"
+        android:background="@drawable/button_shape"
+        android:text="Datum und Uhr" />
+
+    <EditText
+        android:id="@+id/eventsNameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="28dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Veranstaltungsname" />
+
+    <EditText
+        android:id="@+id/eventBeschreibungTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="68dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="202dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Beschreibung(optional)" />
+
+    <Button
+        android:id="@+id/save_event"
+        android:layout_width="124dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventBeschreibungTxt"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="17dp"
+        android:text="Speichern" />
+
+</RelativeLayout>
