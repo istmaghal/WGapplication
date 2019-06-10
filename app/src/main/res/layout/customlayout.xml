@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/custEventOrt"
+        android:layout_width="169dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="165dp"
+        android:layout_marginBottom="658dp"
+        android:text="TextView" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="74dp"
+        android:layout_height="117dp"
+        app:srcCompat="@drawable/button_shape" />
+
+    <TextView
+        android:id="@+id/custEventName"
+        android:layout_width="333dp"
+        android:layout_height="39dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="6dp"
+        android:layout_toStartOf="@+id/custEventDatum"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/custEventDatum"
+        android:layout_width="122dp"
+        android:layout_height="32dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="656dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/custEventUhr"
+        android:layout_width="83dp"
+        android:layout_height="29dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="623dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/custEventBeschr"
+        android:layout_width="231dp"
+        android:layout_height="31dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="620dp"
+        android:text="TextView" />
+
+
+</RelativeLayout>
