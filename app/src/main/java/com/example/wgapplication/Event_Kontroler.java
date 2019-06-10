@@ -8,6 +8,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 
@@ -21,7 +22,6 @@ public class Event_Kontroler extends AppCompatActivity /*implements View.OnClick
     ArrayList<Event> alleEvents = new ArrayList<Event>();
 
     private CustomEventListAdapter Evt_CustomListAdapter = null;
-
 
 
     @Override
@@ -56,16 +56,32 @@ public class Event_Kontroler extends AppCompatActivity /*implements View.OnClick
             String ort = data.getExtras().getString( "ort" );
             String beschreibung = data.getExtras().getString( "beschreibung" );
 
+            ListView showEvents = (ListView) findViewById( R.id.lvEvents );
+
+
             int tag = data.getExtras().getInt( "tag" );
             int monat = data.getExtras().getInt( "monat" );
             int year = data.getExtras().getInt( "jahr" );
             int uhr = data.getExtras().getInt( "uhr" );
             int minut = data.getExtras().getInt( "minuten" );
             Event evnt = new Event( name, ort, tag, monat, year, uhr, minut, beschreibung );
+
+            showEvents.setAdapter( Evt_CustomListAdapter );
             alleEvents.add( evnt );
-            System.out.println("name:"+ evnt.getName());
+
+            //System.out.println("name:"+ alleEvents.get( 1 ).getName());
+
             Evt_CustomListAdapter.notifyDataSetChanged();
 
+/*
+            ListView showEinkäufe = (ListView) findViewById( R.id.listView );
+            String[] items = {"Wasser", "Klopapier"};
+            //alleWare = new ArrayList<>( Arrays.asList( items ) );
+            adapter = new ArrayAdapter<String>( this, R.layout.layout_add_einkauf, R.id.artikel, alleWare );
+            showEinkäufe.setAdapter( adapter );
+            alleWare.add( artikel );
+
+            adapter.notifyDataSetChanged();*/
 
         }
     }
@@ -78,8 +94,8 @@ public class Event_Kontroler extends AppCompatActivity /*implements View.OnClick
         Evt_CustomListAdapter = new CustomEventListAdapter( this, alleEvents );
 
         // Attach the adapter to a ListView
-        ListView listView = (ListView) findViewById( R.id.lvEvents );
-        listView.setAdapter( Evt_CustomListAdapter );
+        ListView listView1 = (ListView) findViewById( R.id.lvEvents );
+        listView1.setAdapter( Evt_CustomListAdapter );
 
     }
 
