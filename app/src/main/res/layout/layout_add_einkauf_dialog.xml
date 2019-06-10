@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="30dp">
+
+    <EditText
+        android:id="@+id/wareInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Veranstaltungsname" />
+    <EditText
+        android:id="@+id/menge_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wareInput"
+
+        android:text="Menge" />
+
+
+</RelativeLayout>
