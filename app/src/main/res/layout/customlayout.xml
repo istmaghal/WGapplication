@@ -8,82 +8,81 @@
 
     <TextView
         android:id="@+id/custEventOrt"
-        android:layout_width="220dp"
-        android:layout_height="30dp"
+        android:layout_width="162dp"
+        android:layout_height="35dp"
 
-        android:layout_alignStart="@+id/imageView3"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="186dp"
+        android:layout_marginStart="7dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="50dp"
-        android:text="TextView" />
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="47dp"
+        android:layout_toEndOf="@+id/custEventUhr"
+        android:text="ort" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="10dp"
-        android:layout_height="117dp"
+        android:layout_height="120dp"
         android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
         app:srcCompat="@drawable/button_shape" />
 
     <TextView
         android:id="@+id/custEventName"
-        android:layout_width="397dp"
-        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
         android:layout_alignBottom="@+id/custEventBeschr"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="13dp"
         android:layout_marginTop="0dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="78dp"
+        android:layout_marginEnd="215dp"
+        android:layout_marginBottom="76dp"
         android:layout_toStartOf="@+id/custEventDatum"
-        android:text="TextView" />
+        android:text="titel"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/custEventDatum"
-        android:layout_width="91dp"
-        android:layout_height="29dp"
+        android:layout_width="107dp"
+        android:layout_height="35dp"
         android:layout_alignStart="@+id/imageView3"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="309dp"
-        android:layout_marginBottom="49dp"
-        android:text="TextView" />
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginBottom="47dp"
+        android:text="datum" />
 
     <TextView
         android:id="@+id/custEventUhr"
-        android:layout_width="72dp"
-        android:layout_height="30dp"
+        android:layout_width="92dp"
+        android:layout_height="35dp"
 
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="105dp"
-        android:layout_marginEnd="232dp"
-        android:layout_marginBottom="50dp"
-        android:text="TextView" />
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginBottom="51dp"
+        android:layout_toEndOf="@+id/custEventDatum"
+        android:text="uhr" />
 
     <TextView
         android:id="@+id/custEventBeschr"
-        android:layout_width="381dp"
-        android:layout_height="37dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
 
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="14dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="73dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="9dp"
         android:text="TextView" />
 
 
