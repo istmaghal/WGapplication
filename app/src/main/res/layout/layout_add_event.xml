@@ -12,7 +12,7 @@
         android:layout_marginTop="108dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Ort" />
+        android:hint="Ort" />
 
     <Button
         android:id="@+id/pick_date_button"
@@ -25,7 +25,7 @@
         android:layout_marginEnd="9dp"
         android:layout_toEndOf="@+id/eventOrtTxt"
         android:background="@drawable/button_shape"
-        android:text="Datum und Uhr" />
+        android:hint="Datum und Uhr" />
 
     <EditText
         android:id="@+id/eventsNameTxt"
@@ -39,7 +39,7 @@
         android:layout_marginEnd="28dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Veranstaltungsname" />
+        android:hint="Veranstaltungsname" />
 
     <EditText
         android:id="@+id/eventBeschreibungTxt"
@@ -53,7 +53,7 @@
         android:layout_marginEnd="24dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Beschreibung(optional)" />
+        android:hint="Beschreibung(optional)" />
 
     <Button
         android:id="@+id/save_event"
