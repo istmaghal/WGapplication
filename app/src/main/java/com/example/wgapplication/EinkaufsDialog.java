@@ -24,7 +24,7 @@ public class EinkaufsDialog extends AppCompatDialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder( getActivity());
 
         LayoutInflater inflater= getActivity().getLayoutInflater();
-        View view = inflater.inflate( R.layout.layout_add_einkauf,null );
+        View view = inflater.inflate( R.layout.layout_add_einkauf_dialog,null );
 
 
         builder .setView( view )
@@ -49,8 +49,8 @@ public class EinkaufsDialog extends AppCompatDialogFragment {
 
         // verbinde hier unten durch IDs meine Eingabefeldern
 
-        editTextArtikel= view.findViewById(R.id.add_ware  );
-        editTextMenge=view.findViewById( R.id.menge );
+        editTextArtikel= view.findViewById(R.id.wareInput  );
+        editTextMenge=view.findViewById( R.id.menge_input );
 
         return builder.create();
 

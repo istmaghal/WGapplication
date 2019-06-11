@@ -52,9 +52,16 @@ public class CustomEventListAdapter extends ArrayAdapter<Event> {
         ort.setText( myProduct.getOrt() );
 
         beschreibung.setText( myProduct.getBeschreibung() );
+
         String datum1="20/6/2019";
-        datum.setText(datum1  );
-        uhrzeit.setText( "15:20" );
+        datum.setText(datum1 );
+
+        String uhr=String.valueOf( myProduct.getUhr() );
+        String min=String.valueOf( myProduct.getMinute() );
+
+        String Uhrzeit= uhr+":"+min;
+       // datum.setText( "+++++++");
+        uhrzeit.setText(Uhrzeit );
 
         // Return the completed view to render on screen
         return convertView;

@@ -14,12 +14,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Einkaufswagen extends AppCompatActivity implements EinkaufsDialog.addDialoglistner{
-private TextView textWare;
-private  TextView menge;
-//ArrayList<Einkauf> alleWare=new ArrayList<Einkauf>();
-ArrayList<String> alleWare = new ArrayList<String>();
-ArrayAdapter<String> adapter;
+public class Einkaufswagen extends AppCompatActivity implements EinkaufsDialog.addDialoglistner {
+    private TextView textWare;
+    private TextView menge;
+    //ArrayList<Einkauf> alleWare=new ArrayList<Einkauf>();
+    ArrayList<String> alleWare = new ArrayList<String>();
+    ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -28,28 +28,28 @@ ArrayAdapter<String> adapter;
         getSupportActionBar().setTitle( "Einkaufswagen" );
 
 
-        ListView showEinkäufe=(ListView)findViewById( R.id.listView );
-        String was="Wasser";
-        String klo="Klopapier";
-        String seif="seifen";
+        ListView showEinkäufe = (ListView) findViewById( R.id.listView );
+        String was = "Wasser";
+        String klo = "Klopapier";
+        String seif = "seifen";
 
-        if (savedInstanceState==null) {
+        if (savedInstanceState == null) {
             alleWare.add( was );
             alleWare.add( klo );
-        }else {
-alleWare.add( seif );
-            alleWare=savedInstanceState.getStringArrayList( "artikel" );
+        } else {
+            alleWare.add( seif );
+            alleWare = savedInstanceState.getStringArrayList( "artikel" );
         }
-        adapter=new ArrayAdapter<String>( this,R.layout.layout_add_einkauf,R.id.add_ware,alleWare);
+        adapter = new ArrayAdapter<String>( this, R.layout.layout_add_einkauf, R.id.textView2, alleWare );
         showEinkäufe.setAdapter( adapter );
 
 
-        FloatingActionButton floatingActionButton= findViewById( R.id.add_button );
+        FloatingActionButton floatingActionButton = findViewById( R.id.add_button );
         floatingActionButton.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openEinkaufsDialog();
-              //  onSaveInstanceState( savedInstanceState );
+                //  onSaveInstanceState( savedInstanceState );
 
             }
         } );
@@ -57,32 +57,36 @@ alleWare.add( seif );
 
     }
 
-    public  void openEinkaufsDialog(){
+    public void openEinkaufsDialog() {
         //deklariere hier ein neues Dialog zum eingaben von Waren und menge
-EinkaufsDialog addDialog= new EinkaufsDialog();
-addDialog.show( getSupportFragmentManager(),"Neuen Artikel einfügen" );
+        EinkaufsDialog addDialog = new EinkaufsDialog();
+        addDialog.show( getSupportFragmentManager(), "Neuen Artikel einfügen" );
     }
 
     @Override
     public void applyTexts(String artikel, String menge) {
 
 
-            /*ListView showEinkäufe=(ListView)findViewById( R.id.listView );
-            String[] items={"Wasser","Klopapier"};
-            alleWare=new ArrayList<>(Arrays.asList( items ));
-            adapter=new ArrayAdapter<String>( this,R.layout.layout_add_einkauf,R.id.add_ware,alleWare);
-            showEinkäufe.setAdapter( adapter );*/
+        ListView showEinkäufe = (ListView) findViewById( R.id.listView );
+        String[] items = {"Wasser", "Klopapier"};
+        //alleWare = new ArrayList<>( Arrays.asList( items ) );
+        adapter = new ArrayAdapter<String>( this, R.layout.layout_add_einkauf, R.id.textView2, alleWare );
+        showEinkäufe.setAdapter( adapter );
+        alleWare.add( artikel );
 
+        adapter.notifyDataSetChanged();
+
+/*
             alleWare.add( artikel );
             adapter.notifyDataSetChanged();
             Toast.makeText( getBaseContext(),"Artikel:      "+artikel,Toast.LENGTH_LONG ).show();
-
-        }
+*/
+    }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        outState.putStringArrayList("artikel",alleWare);
-        super.onSaveInstanceState(outState);
+        outState.putStringArrayList( "artikel", alleWare );
+        super.onSaveInstanceState( outState );
     }
 }
 

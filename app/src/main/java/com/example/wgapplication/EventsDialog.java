@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatDialogFragment;
 
 import android.app.TimePickerDialog;
@@ -26,7 +27,7 @@ import java.util.Calendar;
 
 import static android.app.PendingIntent.getActivity;
 
-public class EventsDialog extends AppCompatActivity/* implements
+public class EventsDialog extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener/* implements
         DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener */{
 
 
@@ -44,7 +45,7 @@ public class EventsDialog extends AppCompatActivity/* implements
    // TextView tv_dtumReslt;
     Button b_save_Event;
 
-    int day,month,year,hour,minute;
+    int day,month,year,hour=12,minute=30;
     int dayFinal,monthFinal,yearFinal,hourFinal,minuteFinal;
     String name;
     String ort;
@@ -60,9 +61,10 @@ public class EventsDialog extends AppCompatActivity/* implements
         setContentView( R.layout.layout_add_event );
         getSupportActionBar().setTitle( "New Event" );
 
-        final  Button b_pick= (Button)findViewById( R.id.pick_date_button);
-        final TextView tv_dtumReslt=(TextView)findViewById( R.id.eventBeschreibungTxt );
-        final Button b_save_event=(Button)findViewById( R.id.save_event );
+        final  Button b_pick= (Button)findViewById( R.id.pick_uhr_button2);
+
+
+       // final TextView tv_dtumReslt=(TextView)findViewById( R.id.eventBeschreibungTxt );
         edit_text_eventsName=(EditText) findViewById( R.id.eventsNameTxt );
         edit_text_eventsOrt=(EditText)findViewById( R.id.eventOrtTxt );
         edit_text_eventsBeschreibung=(EditText)findViewById( R.id.eventBeschreibungTxt ) ;
@@ -70,18 +72,19 @@ public class EventsDialog extends AppCompatActivity/* implements
         b_pick.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Calendar c=Calendar.getInstance();
-                year=c.get( Calendar.YEAR );
-                month=c.get( Calendar.MONTH );
-                day= c.get( Calendar.DAY_OF_MONTH );
+                DialogFragment timePicker= new TimePickerFragment();
+                timePicker.show( getSupportFragmentManager(),"time picker" );
+            }
 
 
                // datePickerDialog.show();
-            }
+            //}
         } );
 
 //maybe call on data set hier
+        final Button b_save_event=(Button)findViewById( R.id.save_event );
 
+       // b_save_event.set
         b_save_event.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -130,71 +133,26 @@ minuteFinal=minute;
 
         beschreibung=edit_text_eventsBeschreibung.getText().toString();
         data.putExtra( "beschreibung", beschreibung );
+
+        String strHour=String.valueOf( hour );
+        data.putExtra( "hour",hour );
+
+        String strMin=String.valueOf( minute );
+        data.putExtra( "minute",minute );
+
         setResult(RESULT_OK, data);
 
 
         super.finish();
     }
 
+    @Override
+    public void onTimeSet(TimePicker view, int hourOfDay, int minutes) {
 
-//}
-
-/*    @Override
-
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
-        AlertDialog.Builder builder = new AlertDialog.Builder( getActivity() );
-        LayoutInflater inflater= getActivity().getLayoutInflater();
-        View view=inflater.inflate( R.layout.layout_add_event,null );
-
-
-        builder .setView( view )
-                .setTitle( "Neue Veranstaltung anlegen" )
-                //deklaration von button als negativ
-                .setNegativeButton( "Abbrechen", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
-                } )
-
-
-                // hier wird der positiver button festgstellt
-                .setPositiveButton( "Speichern", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String eventNAme= edit_text_eventsName.getText().toString();
-                        String ort= edit_text_eventsOrt.getText().toString();
-                        String tag=Integer.toString( day );
-                        String monat=Integer.toString( month );
-                        String jahr=Integer.toString( year );
-                        String uhr=Integer.toString( hourFinal );
-                        String minute=Integer.toString( minuteFinal );
-                        String beschreibung=edit_text_eventsBeschreibung.getText().toString();
-
-                        eventlistner.applyTexts(eventNAme,ort,tag,monat,jahr,uhr,minute,beschreibung );
-
-                    }
-                } );
-
-        return builder.create();
+        hour=hourOfDay;
+        minute=minutes;
     }
-*/
-
-    /*@Override
-    public void onAttach(Context context) {
-        super.onAttach( context );
-
-        // wennn wir das dialog aufrufen vom der einkaufswage_activity ohne den listner zu implementieren dann kriegen wir diese Meldung dasss der Listner noch zu implementieren ist..
-        try{
-            eventlistnerr=(addDialoglistnerevent) context;
-        }catch (ClassCastException e){
-            throw new ClassCastException(  context.toString()+" muss erstmal implementiert werden");
-        }
-    }*/
 
 
-    // interface damit die Button vom dialog koppieren werden
-  /*  public interface addDialoglistnerevent{
-        void applyTexts(String name, String ort, String tag,String monat,String jahr,String uhr,String minute, String beschreibung);
-    }*/
+
 }

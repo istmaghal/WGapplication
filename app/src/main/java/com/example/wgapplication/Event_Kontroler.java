@@ -62,8 +62,8 @@ public class Event_Kontroler extends AppCompatActivity /*implements View.OnClick
             int tag = data.getExtras().getInt( "tag" );
             int monat = data.getExtras().getInt( "monat" );
             int year = data.getExtras().getInt( "jahr" );
-            int uhr = data.getExtras().getInt( "uhr" );
-            int minut = data.getExtras().getInt( "minuten" );
+            int uhr = data.getExtras().getInt( "hour" );
+            int minut = data.getExtras().getInt( "minute" );
             Event evnt = new Event( name, ort, tag, monat, year, uhr, minut, beschreibung );
 
             showEvents.setAdapter( Evt_CustomListAdapter );
