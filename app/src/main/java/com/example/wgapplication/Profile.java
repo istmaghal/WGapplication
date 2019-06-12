@@ -25,7 +25,7 @@ public class Profile extends AppCompatActivity {
         // Profile Toolbar name
         getSupportActionBar().setTitle("Profile");
 
-        // Hard gecodete Benutzer initialisieren
+        // 2 Hard gecodete Benutzer initialisieren
         initProfile();
         Log.d(TAG, "onCreate: initProfile(hardgecodete Profile)");
 

@@ -27,6 +27,20 @@ public class Benutzer {
         this.F_Hochschule = "nicht definiert";
         this.wohntSeit = "nicht definiert";
     }
+
+    public Benutzer(String abenuzename, String atelefon, boolean amane) {
+        this.benutzerName = abenuzename;
+        this.password = "nicht definiert";
+        this.nachname = "nicht definiert";
+        this.vorname = "nicht definiert";
+        this.geburtstag = "nicht definiert";
+        this.itsmane    = amane;
+        this.telefon = atelefon;
+        this.email = "nicht definiert";
+        this.beschaeftigung = "nicht definiert";
+        this.F_Hochschule = "nicht definiert";
+        this.wohntSeit = "nicht definiert";
+    }
     public Benutzer(String benutzername, String apassword, String nachname, String vorname, String geburtstag, Boolean itsmane,
                     String atelefon, String aemail, String abeschaeftigung, String aF_Hochschule, String awohntSeit){
         this.benutzerName = benutzername;
