@@ -27,7 +27,7 @@ import java.util.Calendar;
 
 import static android.app.PendingIntent.getActivity;
 
-public class EventsDialog extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener/* implements
+public class EventsDialog extends AppCompatActivity implements DatePickerDialog.OnDateSetListener,TimePickerDialog.OnTimeSetListener/* implements
         DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener */{
 
 
@@ -62,12 +62,24 @@ public class EventsDialog extends AppCompatActivity implements TimePickerDialog.
         getSupportActionBar().setTitle( "New Event" );
 
         final  Button b_pick= (Button)findViewById( R.id.pick_uhr_button2);
-
+        final Button b_datePick=(Button)findViewById( R.id.pick_date_button );
 
        // final TextView tv_dtumReslt=(TextView)findViewById( R.id.eventBeschreibungTxt );
         edit_text_eventsName=(EditText) findViewById( R.id.eventsNameTxt );
         edit_text_eventsOrt=(EditText)findViewById( R.id.eventOrtTxt );
         edit_text_eventsBeschreibung=(EditText)findViewById( R.id.eventBeschreibungTxt ) ;
+
+
+        b_datePick.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment date_picker=new DatePickerFragment();
+                date_picker.show( getSupportFragmentManager(),"Date Picker" );
+            }
+        } );
+
+
+
 
         b_pick.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -119,11 +131,9 @@ minuteFinal=minute;
     public void finish() {
 
         Intent data=new Intent();
-        data.putExtra( "tag",day );
-        data.putExtra( "monat",month );
-        data.putExtra( "jahr", year );
-        data.putExtra( "uhr",hour );
-        data.putExtra( "minuten", minute );
+
+       // data.putExtra( "uhr",hour );
+        //data.putExtra( "minuten", minute );
 
         name=edit_text_eventsName.getText().toString();
         data.putExtra( "name",name );
@@ -134,11 +144,14 @@ minuteFinal=minute;
         beschreibung=edit_text_eventsBeschreibung.getText().toString();
         data.putExtra( "beschreibung", beschreibung );
 
-        String strHour=String.valueOf( hour );
+      //  String strHour=String.valueOf( hour );
         data.putExtra( "hour",hour );
 
-        String strMin=String.valueOf( minute );
+       // String strMin=String.valueOf( minute );
         data.putExtra( "minute",minute );
+        data.putExtra( "tag",day );
+        data.putExtra( "monat",month );
+        data.putExtra( "jahr", year );
 
         setResult(RESULT_OK, data);
 
@@ -154,5 +167,10 @@ minuteFinal=minute;
     }
 
 
-
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+day=dayOfMonth;
+this.month=month;
+this.year=year;
+    }
 }

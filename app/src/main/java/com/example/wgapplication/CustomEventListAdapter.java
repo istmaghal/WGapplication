@@ -53,7 +53,11 @@ public class CustomEventListAdapter extends ArrayAdapter<Event> {
 
         beschreibung.setText( myProduct.getBeschreibung() );
 
-        String datum1="20/6/2019";
+
+        String strTAg=String.valueOf( myProduct.getTag() );
+        String strMonat=String.valueOf( myProduct.getMonat() );
+        String strJAhr=String.valueOf( myProduct.getJahr() );
+        String datum1=strTAg+"/"+strMonat+"/"+strJAhr;
         datum.setText(datum1 );
 
         String uhr=String.valueOf( myProduct.getUhr() );
