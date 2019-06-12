@@ -8,8 +8,8 @@ import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 
 import java.text.DateFormat;
-import java.util.Calendar;
 
+import java.util.Calendar;
 public class TimePickerFragment extends DialogFragment {
 
     @Nullable
