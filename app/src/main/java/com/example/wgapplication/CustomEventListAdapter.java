@@ -28,7 +28,6 @@ public class CustomEventListAdapter extends ArrayAdapter<Event> {
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.customlayout, parent, false);
 
-            //LayoutInflater.fstrom(getContext()).inflate(R.layout.customlayout, parent, false);
         }
 
 
@@ -68,6 +67,7 @@ public class CustomEventListAdapter extends ArrayAdapter<Event> {
         uhrzeit.setText(Uhrzeit );
 
         // Return the completed view to render on screen
+        //if(strJAhr!=""& strTAg!="")
         return convertView;
     }
 

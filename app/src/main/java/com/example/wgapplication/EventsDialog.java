@@ -27,8 +27,7 @@ import java.util.Calendar;
 
 import static android.app.PendingIntent.getActivity;
 
-public class EventsDialog extends AppCompatActivity implements DatePickerDialog.OnDateSetListener,TimePickerDialog.OnTimeSetListener/* implements
-        DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener */{
+public class EventsDialog extends AppCompatActivity implements DatePickerDialog.OnDateSetListener,TimePickerDialog.OnTimeSetListener{
 
 
 
@@ -40,20 +39,13 @@ public class EventsDialog extends AppCompatActivity implements DatePickerDialog.
     private EditText edit_text_eventsBeschreibung;
 
 
-
-    //Button b_pick;
-   // TextView tv_dtumReslt;
     Button b_save_Event;
 
-    int day,month,year,hour=12,minute=30;
-    int dayFinal,monthFinal,yearFinal,hourFinal,minuteFinal;
+    int day,month,year,hour,minute;
     String name;
     String ort;
     String beschreibung;
- //   private Bundle savedInstanceState;
 
-   //DatePickerDialog datePickerDialog= new DatePickerDialog
-     //       (EventsDialog.this, (DatePickerDialog.OnDateSetListener) EventsDialog.this,year,month,day);
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -64,7 +56,6 @@ public class EventsDialog extends AppCompatActivity implements DatePickerDialog.
         final  Button b_pick= (Button)findViewById( R.id.pick_uhr_button2);
         final Button b_datePick=(Button)findViewById( R.id.pick_date_button );
 
-       // final TextView tv_dtumReslt=(TextView)findViewById( R.id.eventBeschreibungTxt );
         edit_text_eventsName=(EditText) findViewById( R.id.eventsNameTxt );
         edit_text_eventsOrt=(EditText)findViewById( R.id.eventOrtTxt );
         edit_text_eventsBeschreibung=(EditText)findViewById( R.id.eventBeschreibungTxt ) ;
@@ -93,10 +84,8 @@ public class EventsDialog extends AppCompatActivity implements DatePickerDialog.
             //}
         } );
 
-//maybe call on data set hier
         final Button b_save_event=(Button)findViewById( R.id.save_event );
 
-       // b_save_event.set
         b_save_event.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,34 +95,11 @@ public class EventsDialog extends AppCompatActivity implements DatePickerDialog.
 
     }
 
-/*
-    @Override
-    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-        yearFinal= year;
-        monthFinal=month+1;
-        dayFinal=day;
-
-        Calendar c= Calendar.getInstance();
-        hour=c.get( Calendar.HOUR_OF_DAY );
-        minute=c.get( Calendar.MINUTE );
-        TimePickerDialog timePickerDialog= new TimePickerDialog(  EventsDialog.this,EventsDialog.this, hour,minute, DateFormat.is24HourFormat(this) );
-
-        timePickerDialog.show();
-    }
-
-    @Override
-    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-hourFinal=hourOfDay;
-minuteFinal=minute;
-    }*/
 
     @Override
     public void finish() {
 
         Intent data=new Intent();
-
-       // data.putExtra( "uhr",hour );
-        //data.putExtra( "minuten", minute );
 
         name=edit_text_eventsName.getText().toString();
         data.putExtra( "name",name );
@@ -144,10 +110,8 @@ minuteFinal=minute;
         beschreibung=edit_text_eventsBeschreibung.getText().toString();
         data.putExtra( "beschreibung", beschreibung );
 
-      //  String strHour=String.valueOf( hour );
         data.putExtra( "hour",hour );
 
-       // String strMin=String.valueOf( minute );
         data.putExtra( "minute",minute );
         data.putExtra( "tag",day );
         data.putExtra( "monat",month );

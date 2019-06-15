@@ -118,6 +118,8 @@ public class MainActivity extends AppCompatActivity
         Intent i;
         switch (v.getId()) {
             case R.id.besuche_card:
+                i = new Intent(this, BesuchControler.class);
+                startActivity(i);
                 break;
             case R.id.beschwerde_card:
                 break;

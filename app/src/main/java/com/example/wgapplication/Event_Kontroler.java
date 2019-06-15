@@ -41,7 +41,6 @@ public class Event_Kontroler extends AppCompatActivity /*implements View.OnClick
         floatingActionButton_event.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // openEventsDialog();
                 Intent myIntent = new Intent( Event_Kontroler.this.getApplicationContext(), EventsDialog.class );
                 startActivityForResult( myIntent, PICK_PARTY_REQUEST );
 
@@ -73,15 +72,7 @@ public class Event_Kontroler extends AppCompatActivity /*implements View.OnClick
 
             Evt_CustomListAdapter.notifyDataSetChanged();
 
-/*
-            ListView showEinkäufe = (ListView) findViewById( R.id.listView );
-            String[] items = {"Wasser", "Klopapier"};
-            //alleWare = new ArrayList<>( Arrays.asList( items ) );
-            adapter = new ArrayAdapter<String>( this, R.layout.layout_add_einkauf, R.id.artikel, alleWare );
-            showEinkäufe.setAdapter( adapter );
-            alleWare.add( artikel );
 
-            adapter.notifyDataSetChanged();*/
 
         }
     }
@@ -99,13 +90,4 @@ public class Event_Kontroler extends AppCompatActivity /*implements View.OnClick
 
     }
 
-
-
-
-/*
-    @Override
-    public void onClick(View v) {
-
-    }
-*/
 }
