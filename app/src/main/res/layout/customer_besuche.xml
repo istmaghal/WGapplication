@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="123dp">
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        app:cardBackgroundColor="@color/olive">
+
+
+        <TextView
+            android:id="@+id/dontcare_dont_care_wer"
+            android:layout_width="62dp"
+            android:layout_height="31dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="85dp"
+            android:layout_marginEnd="323dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Wer:"
+            android:textStyle="bold"
+            android:typeface="monospace" />
+
+        <TextView
+            android:id="@+id/set_von_Datum"
+            android:layout_width="295dp"
+            android:layout_height="31dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="107dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:text="TextView"
+            android:textSize="18sp"
+            android:textStyle="bold"
+
+            />
+
+        <TextView
+            android:id="@+id/dontcare_von"
+            android:layout_width="62dp"
+            android:layout_height="31dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
+            android:text="Von:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dont_careBis"
+            android:layout_width="62dp"
+            android:layout_height="31dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="353dp"
+            android:text="Bis:"
+            android:textStyle="bold"
+            android:typeface="monospace"
+            />
+
+        <TextView
+            android:id="@+id/set_bis_Datum"
+            android:layout_width="290dp"
+            android:layout_height="31dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="107dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="20dp"
+            android:text="TextView"
+            android:textSize="18sp"
+            android:textStyle="bold"
+
+            />
+
+        <TextView
+            android:id="@+id/setBesuche_name"
+            android:layout_width="290dp"
+            android:layout_height="31dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="107dp"
+            android:layout_marginTop="85dp"
+            android:layout_marginEnd="20dp"
+            android:text="TextView"
+            android:textSize="18sp"
+            android:textStyle="bold"
+
+            />
+
+    </android.support.v7.widget.CardView>
+
+
+
+
+</RelativeLayout>
