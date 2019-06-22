@@ -17,31 +17,27 @@ import java.util.List;
 public class Einkaufswagen extends AppCompatActivity implements EinkaufsDialog.addDialoglistner {
     private TextView textWare;
     private TextView menge;
-    //ArrayList<Einkauf> alleWare=new ArrayList<Einkauf>();
-    ArrayList<String> alleWare = new ArrayList<String>();
-    ArrayAdapter<String> adapter;
+
+    ArrayList<Einkauf> alleWare = new ArrayList<Einkauf>();
+    private EinkauaflistAdapter einkauaflistAdapter = null;
+
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
+
         setContentView( R.layout.activity_einkaufswagen );
         getSupportActionBar().setTitle( "Einkaufswagen" );
 
 
-        ListView showEinkäufe = (ListView) findViewById( R.id.listView );
+        //ListView showEinkäufe = (ListView) findViewById( R.id.lv_einkaufsagen );
         String was = "Wasser";
-        String klo = "Klopapier";
-        String seif = "seifen";
+        String menge = "2* 6er Pack";
+        Einkauf einkauf = new Einkauf( was, menge );
+        alleWare.add( einkauf );
 
-        if (savedInstanceState == null) {
-            alleWare.add( was );
-            alleWare.add( klo );
-        } else {
-            alleWare.add( seif );
-            alleWare = savedInstanceState.getStringArrayList( "artikel" );
-        }
-        adapter = new ArrayAdapter<String>( this, R.layout.layout_add_einkauf, R.id.textView2, alleWare );
-        showEinkäufe.setAdapter( adapter );
+        useEinkauflistAdapter();
+        //showEinkäufe.setAdapter( einkauaflistAdapter );
 
 
         FloatingActionButton floatingActionButton = findViewById( R.id.add_button );
@@ -65,28 +61,21 @@ public class Einkaufswagen extends AppCompatActivity implements EinkaufsDialog.a
 
     @Override
     public void applyTexts(String artikel, String menge) {
+        Einkauf einkauf = new Einkauf( artikel, menge );
 
+        ListView showEinkäufe = (ListView) findViewById( R.id.lv_einkaufsagen );
 
-        ListView showEinkäufe = (ListView) findViewById( R.id.listView );
-        String[] items = {"Wasser", "Klopapier"};
-        //alleWare = new ArrayList<>( Arrays.asList( items ) );
-        adapter = new ArrayAdapter<String>( this, R.layout.layout_add_einkauf, R.id.textView2, alleWare );
-        showEinkäufe.setAdapter( adapter );
-        alleWare.add( artikel );
+        showEinkäufe.setAdapter( einkauaflistAdapter );
+        alleWare.add( einkauf );
 
-        adapter.notifyDataSetChanged();
+        einkauaflistAdapter.notifyDataSetChanged();
 
-/*
-            alleWare.add( artikel );
-            adapter.notifyDataSetChanged();
-            Toast.makeText( getBaseContext(),"Artikel:      "+artikel,Toast.LENGTH_LONG ).show();
-*/
     }
 
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        outState.putStringArrayList( "artikel", alleWare );
-        super.onSaveInstanceState( outState );
+
+    public void useEinkauflistAdapter() {
+        einkauaflistAdapter = new EinkauaflistAdapter( this, alleWare );
+        ListView lv1 = (ListView) findViewById( R.id.lv_einkaufsagen );
+        lv1.setAdapter( einkauaflistAdapter );
     }
 }
-
