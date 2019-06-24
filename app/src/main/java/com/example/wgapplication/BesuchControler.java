@@ -1,13 +1,16 @@
 package com.example.wgapplication;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -16,9 +19,9 @@ public class BesuchControler extends AppCompatActivity {
 
     private static final String TAG = "Event_Kontroler";
     private static int PICK_PARTY_REQUEST = 200;
-    ArrayList<Besuch> allebesuche = new ArrayList<Besuch>();
-
-    private BesuchListAdapter besuchListAdapter = null;
+    ArrayList<Besuch> allebesuche;
+    private BesuchListAdapter besuchListAdapter;
+    ListView showBesuche;
 
 
     @Override
@@ -28,6 +31,9 @@ public class BesuchControler extends AppCompatActivity {
         setContentView( R.layout.besuche_principal_activity );
         getSupportActionBar().setTitle( "Besuche" );
 
+        allebesuche = new ArrayList<Besuch>();
+        besuchListAdapter = null;
+        showBesuche = (ListView) findViewById( R.id.lvBesuche );
 
         useBesuchListAdapter();
 
@@ -41,12 +47,36 @@ public class BesuchControler extends AppCompatActivity {
         } );
 
 
+        showBesuche.setOnItemLongClickListener( new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                final int witch_item = position;
+                new AlertDialog.Builder( BesuchControler.this )
+                        .setIcon( android.R.drawable.ic_delete )
+                        .setTitle( "Are you sure ?" )
+                        .setMessage( "Do you want to delete this item" )
+                        .setPositiveButton( "Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                allebesuche.remove( witch_item );
+                                besuchListAdapter.notifyDataSetChanged();
+                            }
+                        } )
+
+                        .setNegativeButton( "No", null )
+                        .show();
+
+                return true;
+            }
+        } );
+
+
+
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK && requestCode == PICK_PARTY_REQUEST) {
-            ListView showBesuche = (ListView) findViewById( R.id.lvBesuche );
 
             String bezieung = data.getExtras().getString( "b_art" );
             int dVon = data.getExtras().getInt( "dayVon" );

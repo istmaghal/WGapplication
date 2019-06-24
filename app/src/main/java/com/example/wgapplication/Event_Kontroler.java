@@ -1,13 +1,16 @@
 package com.example.wgapplication;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.util.Log;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -19,10 +22,9 @@ public class Event_Kontroler extends AppCompatActivity /*implements View.OnClick
     private static final String TAG = "Event_Kontroler";
     private static int PICK_PARTY_REQUEST = 100;
 
-    ArrayList<Event> alleEvents = new ArrayList<Event>();
-
-    private CustomEventListAdapter Evt_CustomListAdapter = null;
-
+    ArrayList<Event> alleEvents;
+    private CustomEventListAdapter Evt_CustomListAdapter;
+    ListView showEvents;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -30,6 +32,11 @@ public class Event_Kontroler extends AppCompatActivity /*implements View.OnClick
 
         setContentView( R.layout.activity_events );
         getSupportActionBar().setTitle( "Events" );
+
+
+        showEvents = (ListView) findViewById( R.id.lvEvents );
+        alleEvents = new ArrayList<Event>();
+        Evt_CustomListAdapter = null;
 
         Event event0 = new Event( "Kino", "Frankfurt", 12, 6, 2019, 19, 30, "kostenlos für studenten" );
         alleEvents.add( event0 );
@@ -46,6 +53,30 @@ public class Event_Kontroler extends AppCompatActivity /*implements View.OnClick
 
             }
         } );
+
+
+        showEvents.setOnItemLongClickListener( new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                final int witch_item = position;
+                new AlertDialog.Builder( Event_Kontroler.this )
+                        .setIcon( android.R.drawable.ic_delete )
+                        .setTitle( "Are you sure ?" )
+                        .setMessage( "Do you want to delete this item" )
+                        .setPositiveButton( "Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                alleEvents.remove( witch_item );
+                                Evt_CustomListAdapter.notifyDataSetChanged();
+                            }
+                        } )
+
+                        .setNegativeButton( "No", null )
+                        .show();
+
+                return true;
+            }
+        } );
     }
 
     @Override
@@ -55,7 +86,6 @@ public class Event_Kontroler extends AppCompatActivity /*implements View.OnClick
             String ort = data.getExtras().getString( "ort" );
             String beschreibung = data.getExtras().getString( "beschreibung" );
 
-            ListView showEvents = (ListView) findViewById( R.id.lvEvents );
 
 
             int tag = data.getExtras().getInt( "tag" );

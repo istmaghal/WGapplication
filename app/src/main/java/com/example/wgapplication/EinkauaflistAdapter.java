@@ -23,11 +23,11 @@ public class EinkauaflistAdapter extends ArrayAdapter<Einkauf> {
             convertView= LayoutInflater.from( getContext()).inflate( R.layout.layout_add_einkauf, parent, false);
 
         }
-        TextView ware=(TextView)convertView.findViewById( R.id.wareInput );
-        TextView menge= (TextView)convertView.findViewById( R.id.menge_input );
+        TextView ware=(TextView)convertView.findViewById( R.id.set_ware );
+        TextView menge= (TextView)convertView.findViewById( R.id.set_menge );
 
-ware.setText( einkauf.getArtikel() );
-menge.setText( einkauf.getMenge() );
+    ware.setText( einkauf.getArtikel() );
+    menge.setText( einkauf.getMenge() );
 
 return convertView;
     }

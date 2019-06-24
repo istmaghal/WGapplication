@@ -1,9 +1,12 @@
 package com.example.wgapplication;
 
+import android.content.DialogInterface;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -15,12 +18,11 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Einkaufswagen extends AppCompatActivity implements EinkaufsDialog.addDialoglistner {
-    private TextView textWare;
-    private TextView menge;
 
-    ArrayList<Einkauf> alleWare = new ArrayList<Einkauf>();
-    private EinkauaflistAdapter einkauaflistAdapter = null;
 
+    ArrayList<Einkauf> alleWare;
+    EinkauaflistAdapter einkauaflistAdapter;
+    ListView showEinkäufe;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -29,6 +31,9 @@ public class Einkaufswagen extends AppCompatActivity implements EinkaufsDialog.a
         setContentView( R.layout.activity_einkaufswagen );
         getSupportActionBar().setTitle( "Einkaufswagen" );
 
+        alleWare = new ArrayList<Einkauf>();
+        einkauaflistAdapter = null;
+        showEinkäufe = (ListView) findViewById( R.id.lv_einkaufsagen );
 
         //ListView showEinkäufe = (ListView) findViewById( R.id.lv_einkaufsagen );
         String was = "Wasser";
@@ -37,7 +42,6 @@ public class Einkaufswagen extends AppCompatActivity implements EinkaufsDialog.a
         alleWare.add( einkauf );
 
         useEinkauflistAdapter();
-        //showEinkäufe.setAdapter( einkauaflistAdapter );
 
 
         FloatingActionButton floatingActionButton = findViewById( R.id.add_button );
@@ -45,8 +49,30 @@ public class Einkaufswagen extends AppCompatActivity implements EinkaufsDialog.a
             @Override
             public void onClick(View v) {
                 openEinkaufsDialog();
-                //  onSaveInstanceState( savedInstanceState );
 
+            }
+        } );
+
+        showEinkäufe.setOnItemLongClickListener( new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                final int witch_item = position;
+                new AlertDialog.Builder( Einkaufswagen.this )
+                        .setIcon( android.R.drawable.ic_delete )
+                        .setTitle( "Are you sure ?" )
+                        .setMessage( "Do you want to delete this item" )
+                        .setPositiveButton( "Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                alleWare.remove( witch_item );
+                                einkauaflistAdapter.notifyDataSetChanged();
+                            }
+                        } )
+
+                        .setNegativeButton( "No", null )
+                        .show();
+
+                return true;
             }
         } );
 
@@ -63,7 +89,7 @@ public class Einkaufswagen extends AppCompatActivity implements EinkaufsDialog.a
     public void applyTexts(String artikel, String menge) {
         Einkauf einkauf = new Einkauf( artikel, menge );
 
-        ListView showEinkäufe = (ListView) findViewById( R.id.lv_einkaufsagen );
+       // showEinkäufe = (ListView) findViewById( R.id.lv_einkaufsagen );
 
         showEinkäufe.setAdapter( einkauaflistAdapter );
         alleWare.add( einkauf );
