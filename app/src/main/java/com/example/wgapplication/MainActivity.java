@@ -106,9 +106,7 @@ public class MainActivity extends AppCompatActivity
             // Handle the konto action
         } else if (id == R.id.ic_kontake) {
 
-        } else if (id == R.id.ic_einstellungen) {
-
-        } else if (id == R.id.ic_infos) {
+        }  else if (id == R.id.ic_infos) {
 
         }
 
