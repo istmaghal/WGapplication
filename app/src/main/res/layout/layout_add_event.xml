@@ -14,7 +14,7 @@
         android:layout_marginTop="157dp"
         android:layout_marginEnd="14dp"
         android:background="@drawable/button_shape"
-        android:hint="Uhr" />
+        android:hint="@string/uhr" />
 
     <EditText
         android:id="@+id/eventOrtTxt"
@@ -25,7 +25,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="108dp"
         android:ems="10"
-        android:hint="Ort"
+        android:hint="@string/ort"
         android:inputType="textPersonName" />
 
     <Button
@@ -37,7 +37,7 @@
         android:layout_marginTop="111dp"
         android:layout_marginEnd="14dp"
         android:background="@drawable/button_shape"
-        android:hint="Datum" />
+        android:hint="@string/datum" />
 
     <EditText
         android:id="@+id/eventsNameTxt"
@@ -51,7 +51,7 @@
         android:layout_marginEnd="28dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Veranstaltungsname" />
+        android:hint="@string/veranstaltungsname" />
 
     <EditText
         android:id="@+id/eventBeschreibungTxt"
@@ -64,7 +64,7 @@
         android:layout_marginTop="178dp"
         android:layout_marginEnd="24dp"
         android:ems="10"
-        android:hint="Beschreibung(optional)"
+        android:hint="@string/beschreibung_optional"
         android:inputType="textPersonName" />
 
     <Button
@@ -75,6 +75,6 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="22dp"
         android:layout_marginEnd="17dp"
-        android:text="Speichern" />
+        android:text="@string/speichern" />
 
 </RelativeLayout>

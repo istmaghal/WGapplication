@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WGapplication</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="Appname">WG APP</string>
+    <string name="byMundM">by Mahmoud and Michael</string>
+    <string name="ware">Product</string>
+    <string name="menge">Quantity</string>
+    <string name="besuche">Visits</string>
+    <string name="beschwerde">Appeals</string>
+    <string name="profile">Profiles</string>
+    <string name="einkaufswagen">Shopping</string>
+    <string name="putzplan">WG Clean</string>
+    <string name="veranstaltungen">Events</string>
+    <string name="BeispielBesuch">Relationship(Zb: Friend, Family...)</string>
+    <string name="von">From</string>
+    <string name="speichern">Save</string>
+    <string name="bis">To</string>
+    <string name="wer">Who</string>
+    <string name="veranstaltungsname">Events Name</string>
+    <string name="ort">Place</string>
+    <string name="beschreibung_optional">Description(optional)</string>
+    <string name="datum">Date</string>
+    <string name="uhr">Time</string>
+    <string name="Language_settings">Language</string>
+    <string name="konto">Account</string>
+    <string name="kontakte">Contacts</string>
+    <string name="entwickler_info">Development Info</string>
+</resources>

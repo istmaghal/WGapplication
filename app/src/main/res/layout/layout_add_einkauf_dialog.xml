@@ -8,14 +8,13 @@
         android:id="@+id/wareInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Ware" />
+        android:hint="@string/ware" />
     <EditText
         android:id="@+id/menge_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/wareInput"
 
-        android:hint="Menge" />
-
+        android:hint="@string/menge" />
 
 </RelativeLayout>

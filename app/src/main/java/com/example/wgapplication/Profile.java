@@ -27,20 +27,20 @@ public class Profile extends AppCompatActivity {
 
         // 2 Hard gecodete Benutzer initialisieren
         initProfile();
-        Log.d(TAG, "onCreate: initProfile(hardgecodete Profile)");
 
         // Adapter initialisieren
         mylistview = (ListView)findViewById(R.id.profile_listView);
         mylistview.setAdapter(new ProfileListAdapter(this, profile));/*, int[] arr_foto*/
-        Log.d(TAG, "onCreate: listview Adapter im Profile Initialisiert");
 
     }
 
     public ArrayList<Benutzer> getProfile() {
+
         return profile;
     }
 
     public void addProfile(Benutzer mybenutzer) {
+
         profile.add(mybenutzer);
     }
 
@@ -51,7 +51,7 @@ public class Profile extends AppCompatActivity {
         Benutzer b2 = new Benutzer("Admin2", "Admin2", "Kora", "Michael", "05.12.1996",true, "015335533321",  "michaelkora@gmail.com",
                 "Student", "Hochschule Darmstadt", "02.02.2018");
 
-        addProfile(b1);
-        addProfile(b2);
+        profile.add(b1);
+        profile.add(b2);
     }
 }

@@ -33,31 +33,33 @@
         android:layout_height="wrap_content"
         android:clipToPadding="false"
         android:gravity="center">
+
         <android.support.v7.widget.CardView
             android:id="@+id/besuche_card"
             android:layout_width="160dp"
-            android:layout_height="120dp"
+            android:layout_height="140dp"
             android:layout_margin="10dp">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="120dp"
-                    android:layout_height="70dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
                     android:background="@drawable/backgroundbesuche"
                     android:contentDescription="TODO"
                     android:padding="10dp"
                     android:src="@drawable/ic_flight_land_black_24dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="          Besuche"
+                    android:text="@string/besuche"
+                    android:textAlignment="center"
                     android:textStyle="bold" />
 
 
@@ -67,44 +69,39 @@
         </android.support.v7.widget.CardView>
 
 
-
-
         <android.support.v7.widget.CardView
             android:id="@+id/beschwerde_card"
             android:layout_width="160dp"
-            android:layout_height="120dp"
+            android:layout_height="140dp"
             android:layout_margin="10dp">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="120dp"
-                    android:layout_height="70dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
                     android:background="@drawable/cerclebackgroudred"
                     android:contentDescription="TODO"
                     android:padding="10dp"
                     android:src="@drawable/ic_sentiment_dissatisfied_black_24dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="       Beschwerde"
+                    android:text="@string/beschwerde"
+                    android:textAlignment="center"
                     android:textStyle="bold" />
-
-
 
 
             </LinearLayout>
 
 
         </android.support.v7.widget.CardView>
-
-
 
 
     </LinearLayout>
@@ -122,28 +119,29 @@
         <android.support.v7.widget.CardView
             android:id="@+id/profile_card"
             android:layout_width="160dp"
-            android:layout_height="120dp"
+            android:layout_height="140dp"
             android:layout_margin="10dp">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="120dp"
-                    android:layout_height="70dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
                     android:background="@drawable/cerclebackgrounggreen"
                     android:contentDescription="TODO"
                     android:padding="10dp"
                     android:src="@drawable/ic_people_black_24dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="            Profile"
+                    android:text="@string/profile"
+                    android:textAlignment="center"
                     android:textStyle="bold" />
 
 
@@ -156,28 +154,29 @@
         <android.support.v7.widget.CardView
             android:id="@+id/einkaufswagen_card"
             android:layout_width="160dp"
-            android:layout_height="120dp"
+            android:layout_height="140dp"
             android:layout_margin="10dp">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="120dp"
-                    android:layout_height="70dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
                     android:background="@drawable/cerclebackgroundlime"
                     android:contentDescription="TODO"
                     android:padding="10dp"
                     android:src="@drawable/ic_shopping_cart_black_24dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="      Einkaufswagen"
+                    android:text="@string/einkaufswagen"
+                    android:textAlignment="center"
                     android:textStyle="bold" />
 
 
@@ -204,28 +203,29 @@
         <android.support.v7.widget.CardView
             android:id="@+id/putzplan_card"
             android:layout_width="160dp"
-            android:layout_height="120dp"
+            android:layout_height="140dp"
             android:layout_margin="10dp">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="120dp"
-                    android:layout_height="70dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
                     android:background="@drawable/cerclebackgroungblue"
                     android:contentDescription="TODO"
                     android:padding="10dp"
                     android:src="@drawable/ic_view_list_black_24dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="           Putzplan"
+                    android:text="@string/putzplan"
+                    android:textAlignment="center"
                     android:textStyle="bold" />
 
 
@@ -238,28 +238,29 @@
         <android.support.v7.widget.CardView
             android:id="@+id/events_card"
             android:layout_width="160dp"
-            android:layout_height="120dp"
+            android:layout_height="140dp"
             android:layout_margin="10dp">
 
             <LinearLayout
-                android:layout_width="156dp"
+                android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="120dp"
-                    android:layout_height="70dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
                     android:background="@drawable/cerclebrackgroundfunschia"
                     android:contentDescription="TODO"
                     android:padding="10dp"
                     android:src="@drawable/ic_event_black_24dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="           Events"
+                    android:text="@string/veranstaltungen"
+                    android:textAlignment="center"
                     android:textStyle="bold" />
 
 

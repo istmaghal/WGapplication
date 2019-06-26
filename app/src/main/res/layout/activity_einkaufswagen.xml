@@ -18,26 +18,11 @@
         android:layout_marginBottom="40dp"
         android:foregroundGravity="bottom"
         android:src="@drawable/ic_add_black_24dp"
-        app:backgroundTint="@color/green"
-        app:elevation="9dp"
-        app:fabSize="auto"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/map_button"
-        android:layout_width="114dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:foregroundGravity="bottom"
-        android:src="@drawable/ic_place_black_24dp"
         app:backgroundTint="@color/aqua"
         app:elevation="9dp"
         app:fabSize="auto"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_goneMarginBottom="@dimen/activity_horizontal_margin"
-        tools:layout_editor_absoluteX="8dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ListView
         android:id="@+id/lv_einkaufsagen"
@@ -54,7 +39,7 @@
         android:layout_height="38dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="Ware"
+        android:text="@string/ware"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +53,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Menge"
+        android:text="@string/menge"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/lv_einkaufsagen"

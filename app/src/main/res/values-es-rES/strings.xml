@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WGapplication</string>
+    <string name="ware">Producto</string>
+    <string name="menge">Cantidad</string>
+    <string name="besuche">Visitas</string>
+    <string name="beschwerde">Quejas</string>
+    <string name="profile">Perfiles</string>
+    <string name="einkaufswagen">Compras</string>
+    <string name="putzplan">Plan de Limpieza</string>
+    <string name="veranstaltungen">Eventos</string>
+    <string name="BeispielBesuch">Relacion ( Amigo , Familiar...)</string>
+    <string name="von">Desde</string>
+    <string name="speichern">Guardar</string>
+    <string name="bis">Hasta</string>
+    <string name="wer">Quien</string>
+    <string name="veranstaltungsname">Nombre del Evento</string>
+    <string name="ort">Lugar</string>
+    <string name="beschreibung_optional">Descripcion(Opcional)</string>
+    <string name="datum">Fecha</string>
+    <string name="uhr">Hora</string>
+    <string name="Language_settings">Lengua</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="Appname">WG APP</string>
+    <string name="byMundM">por Mahmoud y Michael</string>
+    <string name="konto">Cuenta</string>
+    <string name="kontakte">Contactos</string>
+    <string name="entwickler_info">Informacion de Desarolladores</string>
+</resources>

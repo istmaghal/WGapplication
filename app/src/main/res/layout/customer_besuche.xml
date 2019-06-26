@@ -21,10 +21,9 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="85dp"
             android:layout_marginEnd="323dp"
-            android:fontFamily="sans-serif-black"
-            android:text="Wer:"
-            android:textStyle="bold"
-            android:typeface="monospace" />
+            android:layout_marginLeft="8dp"
+            android:text="@string/wer"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/set_von_Datum"
@@ -48,7 +47,8 @@
             android:layout_height="31dp"
             android:layout_alignParentTop="true"
             android:layout_marginTop="5dp"
-            android:text="Von:"
+            android:layout_marginLeft="8dp"
+            android:text="@string/von"
             android:textStyle="bold" />
 
         <TextView
@@ -59,10 +59,9 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="45dp"
             android:layout_marginEnd="353dp"
-            android:text="Bis:"
-            android:textStyle="bold"
-            android:typeface="monospace"
-            />
+            android:layout_marginLeft="8dp"
+            android:text="@string/bis"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/set_bis_Datum"
