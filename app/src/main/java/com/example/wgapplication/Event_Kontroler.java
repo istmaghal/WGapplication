@@ -50,8 +50,8 @@ public class Event_Kontroler extends AppCompatActivity /*implements View.OnClick
         alleEvents = new ArrayList<Event>();
         Evt_CustomListAdapter = null;
 
-        Event event0 = new Event( "Kino", "Frankfurt", 12, 6, 2019, 19, 30, "kostenlos für studenten" );
-        alleEvents.add( event0 );
+        //Event event0 = new Event( "Kino", "Frankfurt", 12, 6, 2019, 19, 30, "kostenlos für studenten" );
+        //alleEvents.add( event0 );
 
         useCustomListAdapter();
 
@@ -92,8 +92,8 @@ public class Event_Kontroler extends AppCompatActivity /*implements View.OnClick
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onStart() {
+        super.onStart();
         File dir = new File( this.getFilesDir().toString());
 
         File[] files = dir.listFiles();
@@ -135,8 +135,8 @@ public class Event_Kontroler extends AppCompatActivity /*implements View.OnClick
         }
     }
     @Override
-    protected void onPause() {
-        super.onPause();
+    protected void onStop() {
+        super.onStop();
 
         String json = gson.toJson( alleEvents );
         FileOutputStream outputStream;

@@ -80,9 +80,7 @@ String beziehungsArt;
         data.putExtra( "monatBis",monatBis );
         data.putExtra( "jahrBis",jahrVon );
 
-setResult( RESULT_OK,data );
-
-
+        setResult( RESULT_OK,data );
         super.finish();
     }
 

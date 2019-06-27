@@ -28,7 +28,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
-    private CardView besucheCard, beschwerdeCard, einkaufswagenCard, profileCard, putzplanCard, eventsCard;
+    private CardView besucheCard, einkaufswagenCard, profileCard, eventsCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,18 +37,16 @@ public class MainActivity extends AppCompatActivity
 
         // hier werden die verschieden cards definiert
         besucheCard = (CardView) findViewById(R.id.besuche_card);
-        beschwerdeCard = (CardView) findViewById(R.id.beschwerde_card);
+
         einkaufswagenCard = (CardView) findViewById(R.id.einkaufswagen_card);
         profileCard = (CardView) findViewById(R.id.profile_card);
-        putzplanCard = (CardView) findViewById(R.id.putzplan_card);
+
         eventsCard = (CardView) findViewById(R.id.events_card);
 
         //click listner an cards hinfügen damit sie als button funktionieren
         besucheCard.setOnClickListener(this);
-        beschwerdeCard.setOnClickListener(this);
         einkaufswagenCard.setOnClickListener(this);
         profileCard.setOnClickListener(this);
-        putzplanCard.setOnClickListener(this);
         eventsCard.setOnClickListener(this);
 
         //settings für die Sprache
@@ -125,8 +123,6 @@ public class MainActivity extends AppCompatActivity
                 i = new Intent(this, BesuchControler.class);
                 startActivity(i);
                 break;
-            case R.id.beschwerde_card:
-                break;
             case R.id.events_card:
                 i = new Intent(this, Event_Kontroler.class);
                 startActivity(i);
@@ -134,8 +130,6 @@ public class MainActivity extends AppCompatActivity
             case R.id.einkaufswagen_card:
                 i = new Intent(this, Einkaufswagen.class);
                 startActivity(i);
-                break;
-            case R.id.putzplan_card:
                 break;
             case R.id.profile_card:
                 i = new Intent(this, ProfileControler.class);

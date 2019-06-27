@@ -11,7 +11,6 @@ import android.util.JsonReader;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -50,11 +49,11 @@ public class Einkaufswagen extends AppCompatActivity implements EinkaufsDialog.a
         setContentView( R.layout.activity_einkaufswagen );
         getSupportActionBar().setTitle( "Einkaufswagen" );
 
-       // alleWare = new ArrayList<Einkauf>();
+        // alleWare = new ArrayList<Einkauf>();
         einkauaflistAdapter = null;
         showEinkäufe = (ListView) findViewById( R.id.lv_einkaufsagen );
-
         useEinkauflistAdapter();
+
 
         FloatingActionButton floatingActionButton = findViewById( R.id.add_button );
         floatingActionButton.setOnClickListener( new View.OnClickListener() {
@@ -134,9 +133,6 @@ public class Einkaufswagen extends AppCompatActivity implements EinkaufsDialog.a
                 }
             }
 
-            Einkauf einkauf = new Einkauf( "Wasser", "2* 6er Pack" );
-          //  //this.alleWare.add( einkauf );
-           // einkauaflistAdapter.clear();
             einkauaflistAdapter.notifyDataSetChanged();
         }
 
@@ -148,7 +144,7 @@ public class Einkaufswagen extends AppCompatActivity implements EinkaufsDialog.a
 
         String json = gson.toJson( alleWare );
         FileOutputStream outputStream;
-            try {
+        try {
             outputStream = this.openFileOutput("wg_Einkauf.json", Context.MODE_PRIVATE );
             outputStream.write( json.getBytes() );
             outputStream.close();
