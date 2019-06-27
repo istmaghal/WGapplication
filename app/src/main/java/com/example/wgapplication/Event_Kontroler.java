@@ -1,6 +1,7 @@
 package com.example.wgapplication;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +16,16 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class Event_Kontroler extends AppCompatActivity /*implements View.OnClickListener*/ {
@@ -25,6 +36,7 @@ public class Event_Kontroler extends AppCompatActivity /*implements View.OnClick
     ArrayList<Event> alleEvents;
     private CustomEventListAdapter Evt_CustomListAdapter;
     ListView showEvents;
+    Gson gson = new Gson();
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -79,7 +91,65 @@ public class Event_Kontroler extends AppCompatActivity /*implements View.OnClick
         } );
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        File dir = new File( this.getFilesDir().toString());
 
+        File[] files = dir.listFiles();
+
+        File file = null;
+        for(int i = 0; i < files.length; ++i){
+            if(files[i].toString().contains("wg_Event.json")){
+                file = files[i];
+            }
+        }
+
+        if(file != null) {
+
+            StringBuilder text = new StringBuilder();
+            try {
+                BufferedReader br = new BufferedReader( new FileReader( file ) );
+                String newEvent;
+
+                while ((newEvent = br.readLine()) != null) {
+                    text.append( newEvent );
+                    text.append( '\n' );
+                }
+                br.close();
+            } catch (IOException e) {
+            }
+
+            Type listType = new TypeToken<ArrayList<Event>>() {
+            }.getType();
+
+            ArrayList<Event> load  = new Gson().fromJson( text.toString(), listType );
+
+            for(Event index : load){
+                if(!alleEvents.contains(index )) {
+                    alleEvents.add( index );
+                }
+            }
+
+            Evt_CustomListAdapter.notifyDataSetChanged();
+        }
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        String json = gson.toJson( alleEvents );
+        FileOutputStream outputStream;
+        try {
+            outputStream = this.openFileOutput("wg_Event.json", Context.MODE_PRIVATE );
+            outputStream.write( json.getBytes() );
+            outputStream.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK && requestCode == PICK_PARTY_REQUEST) {
