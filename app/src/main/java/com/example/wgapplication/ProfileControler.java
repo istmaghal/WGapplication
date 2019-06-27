@@ -27,9 +27,9 @@ public class ProfileControler extends AppCompatActivity {
         getSupportActionBar().setTitle("Profile");
 
         // Hardgecodet Profile
-        Benutzer b1 = new Benutzer("Mahmoud Ghali", "650748097",true);
+        Benutzer b1 = new Benutzer("Mahmoud Ghali", "015239392321",true);
         alleProfile.add(b1);
-        Benutzer b2 = new Benutzer("Michael Kora", "1520456525",true);
+        Benutzer b2 = new Benutzer("Michael Kora", "015335533321",true);
         alleProfile.add(b2);
 
         // Conect View layout

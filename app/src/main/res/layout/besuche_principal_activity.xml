@@ -7,17 +7,17 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/addBesuchButton"
-        android:layout_width="70dp"
-        android:layout_height="55dp"
-        android:layout_marginEnd="10dp"
+        android:layout_width="114dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="40dp"
         android:foregroundGravity="bottom"
         android:src="@drawable/ic_add_black_24dp"
         app:background="@color/aqua"
         app:elevation="9dp"
         app:fabSize="auto"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="660dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ListView
         android:id="@+id/lvBesuche"
