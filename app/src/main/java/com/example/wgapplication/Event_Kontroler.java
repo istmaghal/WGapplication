@@ -79,6 +79,7 @@ public class Event_Kontroler extends AppCompatActivity /*implements View.OnClick
         } );
     }
 
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK && requestCode == PICK_PARTY_REQUEST) {

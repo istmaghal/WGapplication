@@ -42,6 +42,7 @@ public class EinkaufsDialog extends AppCompatDialogFragment {
                     public void onClick(DialogInterface dialog, int which) {
                         String arkitel= editTextArtikel.getText().toString();
                         String menge= editTextMenge.getText().toString();
+
                         listner.applyTexts( arkitel,menge );
 
                     }
